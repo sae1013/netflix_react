@@ -1,0 +1,23 @@
+.nav {
+  width:100%;
+  padding: 1rem;
+  position: fixed;
+  transition: all .4s ease-in;
+}
+.bg_black {
+  background-color: #000;
+}
+.nav_items{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_logo{
+  width:100px;
+}
+.nav_avatar{
+  width:50px;
+}
+img {
+  width:100%;
+}
