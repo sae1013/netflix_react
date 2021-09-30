@@ -3,8 +3,10 @@
   height:40rem;
 }
 .banner_contents {
+  
   margin-left: 2rem;
-  padding-top: 13rem;
+  padding-top: 14rem;
+  height:35rem;
 }
 .title {
   color: white;
@@ -13,12 +15,18 @@
   margin-bottom: 1rem;
 }
 .description {
-  color:white;
-  font-size: 2rem;
-  font-weight: 200;
+  color:rgba(255,255,255,0.8);
+  font-size: 1.4rem;
+  font-weight: 800;
   width: 30rem;
   /* overflow: hidden; */
 }
 .actions {
   margin-top: 3rem;
+}
+
+.banner_fadeBottom {
+  height: 5rem;
+  background: linear-gradient(180deg,transparent,rgba(37,37,37,0.6),rgba(0,0,0));
+  
 }
