@@ -1,47 +1,12 @@
 import React from 'react'
 import Nav from '../components/Nav';
+import Banner from '../components/Banner';
 
 function Homescreen() {
   return (
     <div>
-      <Nav></Nav>      
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      <p style={{fontSize:"20px"}}>TEST</p>
-      {/* Banner */}
+      <Nav></Nav>
+      <Banner></Banner>
       
       {/* Row  */}
     </div>
