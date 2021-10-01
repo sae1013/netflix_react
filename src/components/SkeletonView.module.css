@@ -1,0 +1,10 @@
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(0,0%,10%);
+  }
+  
+  100% {
+    background-color: hsl(0,0%,90%);
+  }
+}

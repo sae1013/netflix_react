@@ -7,7 +7,7 @@ function Nav() {
   const [NavShow,handleNavShow] = useState(true);
 
   const transitionNavBar = () => {
-    if(window.scrollY > 90) {  // transparent
+    if(window.scrollY > 90) {
       handleNavShow(false);
     }else {
       handleNavShow(true);
