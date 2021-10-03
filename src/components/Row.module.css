@@ -1,0 +1,19 @@
+.row_list {
+  margin-bottom: 3rem;
+}
+.row_title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.item_container { /* 일반사이즈(작은포스터) */
+  height:20rem;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.large_row {  /* 라지사이즈(포스터) */
+  height:30rem;
+}

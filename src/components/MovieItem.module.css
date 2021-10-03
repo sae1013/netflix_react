@@ -1,0 +1,61 @@
+.item {
+  width:15rem;
+  height: 20rem;
+  flex-shrink: 0;
+  margin-right: 2rem;
+  position: relative;  
+  font-size: 1.5rem;
+  color: white;
+  transition: ease 1s;
+}
+
+.large_poster {
+  width:20rem;
+  height:30rem;
+  font-size: 2rem;
+}
+
+.item > img {
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  transition: ease 0.3s;
+  
+}
+
+.item .backface {
+  background-color:rgba(0,0,0,0.7);
+  position: absolute;
+  z-index: 10;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item .backface {
+  text-align: center;
+  
+}
+
+.backface_title {
+  font-weight: 800;
+  padding-bottom: 3rem;
+}
+.backface_date {
+  font-size: inherit;
+  padding-bottom: 1rem;
+  
+}
+.backface_average{
+  font-size: inherit;
+}
+
+.backface_container {
+  
+  
+}
+
