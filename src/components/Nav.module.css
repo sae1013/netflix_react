@@ -3,6 +3,7 @@
   padding: 1rem;
   position: fixed;
   transition: all .4s ease-in;
+  z-index: 10;
 }
 .bg_black {
   background-color: #000;
