@@ -15,7 +15,11 @@ const useApi = () => {
       headers: requestConfig.headers ? requestConfig.headers : {},
       })
       if(response.status == 200){
-        applyData(response.data.results);
+        if(response.data.results){
+          applyData(response.data.results);
+        }else {
+          applyData(response.data);
+        }
         setIsLoading(false);
       }
     

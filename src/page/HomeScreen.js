@@ -7,7 +7,6 @@ import classes from './HomeScreen.module.css';
 import {useHistory} from 'react-router-dom';
 
 function Homescreen(props) {
-  const history = useHistory()
   
   return (
     <div>
@@ -18,6 +17,7 @@ function Homescreen(props) {
           title="NETFLIX ORIGINALS"
           fetchUrl={requests.fetchNetFlixOriginals}
           isLargeRow
+          isTvShow
         ></Row>
         <Row fetchUrl={requests.fetchTrending} title="Trending"></Row>
         <Row fetchUrl={requests.fetchTopRate} title="Top Rated"></Row>

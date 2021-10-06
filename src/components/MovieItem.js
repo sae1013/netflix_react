@@ -1,13 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import PropTypes, { string } from 'prop-types';
+import {useHistory} from 'react-router-dom';
 import classes from './MovieItem.module.css';
 import { RatingView } from 'react-simple-star-rating'
 
 let baseImageUrl = 'https://image.tmdb.org/t/p/w500'
 
-function MovieItem({movie,isLargeRow}) { 
+function MovieItem({movie,isLargeRow = false,isTvShow = false}) { 
   const [showBack,setShowBack] = useState(false);
-  
+  const history = useHistory();
+
   const mouseEnterHandler = (e) => {
     setShowBack(true);
   }
@@ -16,9 +18,13 @@ function MovieItem({movie,isLargeRow}) {
     setShowBack(false);
   }
   
+  const itemClickHandler = (e) => {
+    history.push(!isTvShow?`/movie/${movie.id}`: `/tv/${movie.id}`)  
+  }
+
   if(showBack){
     return (
-      <div className={`${classes.item} ${isLargeRow && classes.large_poster}`} onMouseLeave={mouseLeaveHandler}> 
+      <div className={`${classes.item} ${isLargeRow && classes.large_poster}`} onMouseLeave={mouseLeaveHandler} onClick={itemClickHandler}> 
         <div className={classes.backface} >
           <div className={classes.backface_container}>
             <p className={classes.backface_title}>{movie.name || movie.title ||movie.original_title}</p>

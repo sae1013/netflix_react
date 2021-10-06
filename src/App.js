@@ -5,18 +5,22 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
+    <div className='App'>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact>
             <HomeScreen />
           </Route>
 
-          <Route path='/movie/:id' exact>
-            <MovieScreen/>
+          <Route path="/movie/:id" exact>
+            <MovieScreen />
+          </Route>
+          <Route path="/tv/:id" exact>
+            {/* <TvShowScreen/> */}
           </Route>
         </Switch>
       </BrowserRouter>
-    
+    </div>
   );
 }
 
