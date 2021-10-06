@@ -11,7 +11,6 @@ const requests = {
   fetchDocumentaries:`/discover/movie?api_key=${API_KEY}&with_genres=99&language=ko-KR`,
   fetchDetailMovie:(movieId)=> (`/movie/${movieId}?api_key=${API_KEY}&language=ko-KR&append_to_response=credits,videos,similar,recommendations,collections`),
   fetchDetailTv: (tvId)=>(`/tv/${tvId}?api_key=${API_KEY}&language=ko-KR&append_to_response=credits,videos`),
+  fetchCollection: (id) => `/collection/${id}?api_key=${API_KEY}&language=ko-KR`,
 }
 export default requests;
-
-

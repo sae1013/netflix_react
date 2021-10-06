@@ -1,20 +1,22 @@
 import React, { useEffect, useCallback, useState } from "react";
 import requests from "../request";
 import { useHistory, useParams } from "react-router-dom";
-import useApi from "../hooks/useApi";
-import genres from "../data/genres";
+// import useApi from "../hooks/useApi";
+import useChainApi from "../hooks/useChainApi";
 import Carousel from "../components/Carousel";
 import { RatingView } from 'react-simple-star-rating'
 import Nav from "../components/Nav";
 import classes from "./MovieScreen.module.scss";
+import axios from "axios";
 
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
 
 function MovieScreen() {
   const history = useHistory();
   const params = useParams();
-  const { isLoading, error, sendRequest: fetchData } = useApi();
+  const { isLoading, error, sendRequest: fetchData } = useChainApi();
   const [movie, setMovie] = useState(null);
+
   const genres = [];
   const actors = [];
   const applyData = useCallback((data) => {
@@ -48,7 +50,7 @@ function MovieScreen() {
             <div className={classes.movie_playInfo}>
               <p>
                 {movie.genres.map((genre, idx) =>
-                  idx == movie.genres.length - 1 ? (
+                  idx === movie.genres.length - 1 ? (
                     <span key={idx}>{genre.name}</span>
                   ) : (
                     <span key={idx}>
@@ -74,7 +76,7 @@ function MovieScreen() {
             <div className={classes.actor}>
               {movie.credits.cast.slice(0, 5).map((actor) => {
                 return (
-                  <div className={classes.actor_info}>
+                  <div key={actor.id} className={classes.actor_info}>
                     <div className={classes.image_wrapper}>
                       <img src={`${baseImageUrl}${actor.profile_path}`}></img>
                     </div>
@@ -98,6 +100,19 @@ function MovieScreen() {
               ))}
             </div>
         </section>
+
+        {movie.collections?.parts.length>1 &&(
+          <>
+          <hr style={{margin:'2.5rem 0'}}></hr>
+          <section className={classes.series}> 
+            <p className={classes.title}>이 컨텐츠의 모든 시리즈</p>
+            <div className={classes.contents}>
+                <Carousel items={movie.collections.parts}/>
+            </div>
+          </section>
+          </>
+        )}
+        
         <hr style={{margin:'2.5rem 0'}}></hr>
 
         <section className={classes.recommendations}> 
@@ -110,7 +125,7 @@ function MovieScreen() {
       </div>
     </div>
 
-    // {/* <img src={`${baseImageUrl}${movie.backdrop_path}`}></img> */}
+   
   );
 }
 

@@ -14,6 +14,7 @@ const useApi = () => {
       body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
       headers: requestConfig.headers ? requestConfig.headers : {},
       })
+      
       if(response.status == 200){
         if(response.data.results){
           applyData(response.data.results);
