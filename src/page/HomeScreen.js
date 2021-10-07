@@ -13,17 +13,10 @@ function Homescreen(props) {
       <Nav></Nav>
       <Banner></Banner>
       <div className={classes.row_container}>
-        <Row
-          title="NETFLIX ORIGINALS"
-          fetchUrl={requests.fetchNetFlixOriginals}
-          isLargeRow
-          isTvShow
-        ></Row>
-        <Row fetchUrl={requests.fetchTrending} title="Trending"></Row>
-        <Row fetchUrl={requests.fetchTopRate} title="Top Rated"></Row>
+        <Row fetchUrl={requests.fetchUpComing} title="UpComing" isLargeRow></Row>
         <Row fetchUrl={requests.fetchPopulateMovie} title="Most Populated"></Row>
-        <Row fetchUrl={requests.fetchActionMovies} title="Action Movies"></Row>
-        <Row fetchUrl={requests.fetchComedyMovies} title="Comedy Movies"></Row>
+        <Row fetchUrl={requests.fetchTvMovies} title="Tv Movies"></Row>
+        <Row fetchUrl={requests.fetchThrillerMovies} title="Thriller Movies"></Row>
         <Row fetchUrl={requests.fetchRomanceMovies} title="Romance Movies"></Row>
         <Row fetchUrl={requests.fetchDocumentaries} title="Documentaries"></Row>
       </div>

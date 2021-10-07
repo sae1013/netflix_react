@@ -15,9 +15,7 @@ function App() {
           <Route path="/movie/:id" exact>
             <MovieScreen />
           </Route>
-          <Route path="/tv/:id" exact>
-            {/* <TvShowScreen/> */}
-          </Route>
+          
         </Switch>
       </BrowserRouter>
     </div>

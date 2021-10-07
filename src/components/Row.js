@@ -16,15 +16,6 @@ function Row({title,fetchUrl,isLargeRow = false,isTvShow}) {
     fetchData({url:fetchUrl},applyData);
   },[]);
 
-  if(isLoading){ // 로딩페이지 구현해야함
-    return (
-      null
-      // <div className={classes.row_list}>
-        
-      // </div>
-    )
-  }
-
   return (
     <div className={classes.row_list}>
       <p className={classes.row_title}>{title}</p>

@@ -7,7 +7,7 @@ import poster_null_image from '../images/poster_null.svg';
 
 let baseImageUrl = 'https://image.tmdb.org/t/p/w500'
 
-function MovieItem({movie,isLargeRow = false,isTvShow = false}) { 
+function MovieItem({movie,isLargeRow = false}) { 
   const [showBack,setShowBack] = useState(false);
   const history = useHistory();
   
@@ -20,7 +20,7 @@ function MovieItem({movie,isLargeRow = false,isTvShow = false}) {
   }
   
   const itemClickHandler = (e) => {
-    history.push(!isTvShow?`/movie/${movie.id}`: `/tv/${movie.id}`)  
+    history.push(`/movie/${movie.id}`)  
   }
 
   return (
@@ -28,7 +28,7 @@ function MovieItem({movie,isLargeRow = false,isTvShow = false}) {
       {showBack && (<div className={classes.backface} >
           <div className={classes.backface_container}>
             <p className={classes.backface_title}>{movie.name || movie.title ||movie.original_title}</p>
-            <p className={classes.backface_date}>{movie.release_date|| movie.first_air_date}</p>
+            <p className={classes.backface_date}>{movie.release_date|| movie.first_air_date || movie.air_date} </p>
             <RatingView ratingValue={movie.vote_average/2} stars={5}/>
           </div>
         </div>)}

@@ -15,10 +15,6 @@ function Nav() {
     }
   }
   
-  const logoClickHandler = () => {
-
-  }
-
   useEffect(()=>{
     window.addEventListener("scroll",transitionNavBar);
     

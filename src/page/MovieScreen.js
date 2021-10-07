@@ -24,7 +24,7 @@ function MovieScreen() {
   
   const applyData = useCallback((data) => {
     setMovie(data);
-    console.log(data);
+    
   }, []);
 
   useEffect(() => {
@@ -131,7 +131,7 @@ function MovieScreen() {
         <section className={classes.recommendations}> 
           <p className={classes.title}>추천 컨텐츠</p>
           <div className={classes.contents}>
-              <Carousel items={movie.recommendations.results}/>
+              <Carousel items={movie.similar.results}/>
           </div>
         </section>
         <footer className={classes.movie_screen_footer}></footer>
