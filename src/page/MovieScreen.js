@@ -3,6 +3,7 @@ import requests from "../request";
 import { useHistory, useParams } from "react-router-dom";
 import useChainApi from "../hooks/useChainApi";
 import Carousel from "../components/Carousel";
+import MovieScreenSekeleton from "../components/MovieScreenSekeleton";
 import { RatingView } from 'react-simple-star-rating'
 import Nav from "../components/Nav";
 import classes from "./MovieScreen.module.scss";
@@ -29,10 +30,17 @@ function MovieScreen() {
   useEffect(() => {
     fetchData({ url: requests.fetchDetailMovie(params.id)},applyData);
   }, [params.id]); 
-  
-  if (!movie) {
-    return null;
+  if (!isLoading && !movie){
+    return null
   }
+  if (isLoading){
+    return (
+    <>
+    <Nav />
+    <MovieScreenSekeleton/>
+    </>
+  )}
+  
   return (
     <div
       className={classes.container}
