@@ -50,6 +50,7 @@
   padding-bottom: 1rem;
   
 }
+
 .backface_average{
   font-size: inherit;
 }
@@ -57,9 +58,11 @@
 .backface {
   animation: backfaceFadeIn .5s;
 }
+
 .backface_container {
   animation:backfaceContentsFadeIn .5s;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

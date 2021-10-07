@@ -9,7 +9,6 @@ function Row({title,fetchUrl,isLargeRow = false,isTvShow}) {
   const {isLoading,error,sendRequest:fetchData} = useApi();
 
   const applyData = useCallback((data)=>{
-    console.log(data);
     setMovies(data);
   },[])
 

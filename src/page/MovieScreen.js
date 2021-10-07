@@ -1,13 +1,14 @@
 import React, { useEffect, useCallback, useState } from "react";
 import requests from "../request";
 import { useHistory, useParams } from "react-router-dom";
-// import useApi from "../hooks/useApi";
 import useChainApi from "../hooks/useChainApi";
 import Carousel from "../components/Carousel";
 import { RatingView } from 'react-simple-star-rating'
 import Nav from "../components/Nav";
 import classes from "./MovieScreen.module.scss";
 import axios from "axios";
+import poster_null_image from '../images/poster_null.svg';
+import people from '../images/people.svg';
 
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
 
@@ -19,6 +20,7 @@ function MovieScreen() {
 
   const genres = [];
   const actors = [];
+  
   const applyData = useCallback((data) => {
     setMovie(data);
     console.log(data);
@@ -26,8 +28,8 @@ function MovieScreen() {
 
   useEffect(() => {
     fetchData({ url: requests.fetchDetailMovie(params.id)},applyData);
-  }, []);
-
+  }, [params.id]); 
+  
   if (!movie) {
     return null;
   }
@@ -40,7 +42,8 @@ function MovieScreen() {
       <div className={classes.contents_container}>
         <section className={classes.movie_container}>
           <div className={classes.movie_poster}>
-            <img src={`${baseImageUrl}${movie.poster_path}`}></img>
+          {movie.poster_path ?<img src={`${baseImageUrl}${movie.poster_path}`}></img>
+            : <img style={{objectFit:'cover'}} src={poster_null_image}></img>}
           </div>
           <div className={classes.movie_info}>
             <div className={classes.movie_title}>
@@ -72,13 +75,15 @@ function MovieScreen() {
             <div className={classes.movie_overview}>
               <p>{movie.overview}</p>
             </div>
-
+            
             <div className={classes.actor}>
               {movie.credits.cast.slice(0, 5).map((actor) => {
                 return (
                   <div key={actor.id} className={classes.actor_info}>
                     <div className={classes.image_wrapper}>
-                      <img src={`${baseImageUrl}${actor.profile_path}`}></img>
+                      {actor.profile_path ? (<img src={`${baseImageUrl}${actor.profile_path}`}></img>) 
+                      :<img src={people}></img>}
+                      
                     </div>
                     <p className={classes.name}>{actor.name}</p>
                     <p className={classes.role}>{actor.character}</p>
