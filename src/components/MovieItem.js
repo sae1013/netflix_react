@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react'
-import PropTypes, { string } from 'prop-types';
 import {useHistory} from 'react-router-dom';
 import classes from './MovieItem.module.css';
 import { RatingView } from 'react-simple-star-rating'

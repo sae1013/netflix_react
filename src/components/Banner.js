@@ -1,7 +1,6 @@
 import React,{useState,useEffect,useCallback} from 'react'
 import classes from './Banner.module.css';
 import Button from '../UI/Button';
-import axios from '../axios';
 import useApi from '../hooks/useApi';
 import requests from '../request';
 import {useHistory} from 'react-router-dom';

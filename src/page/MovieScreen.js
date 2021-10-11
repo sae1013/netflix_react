@@ -5,9 +5,7 @@ import useChainApi from "../hooks/useChainApi";
 import Carousel from "../components/Carousel";
 import MovieScreenSekeleton from "../components/MovieScreenSekeleton";
 import { RatingView } from 'react-simple-star-rating'
-import Nav from "../components/Nav";
 import classes from "./MovieScreen.module.scss";
-import axios from "axios";
 import poster_null_image from '../images/poster_null.svg';
 import people from '../images/people.svg';
 
@@ -29,16 +27,13 @@ function MovieScreen() {
 
   useEffect(() => {
     fetchData({ url: requests.fetchDetailMovie(params.id)},applyData);
-  }, [params.id]); 
+  }, [params.id]);
   if (!isLoading && !movie){
     return null
   }
   if (isLoading){
     return (
-    <>
-    <Nav />
     <MovieScreenSekeleton/>
-    </>
   )}
   
   return (
@@ -46,7 +41,7 @@ function MovieScreen() {
       className={classes.container}
       style={{ backgroundImage: `url(${baseImageUrl}${movie.backdrop_path})` }}
     >
-      <Nav />
+      
       <div className={classes.contents_container}>
         <section className={classes.movie_container}>
           <div className={classes.movie_poster}>
