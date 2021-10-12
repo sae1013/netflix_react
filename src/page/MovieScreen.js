@@ -122,7 +122,6 @@ function MovieScreen() {
         )}
         
         <hr style={{margin:'2.5rem 0'}}></hr>
-
         <section className={classes.recommendations}> 
           <p className={classes.title}>추천 컨텐츠</p>
           <div className={classes.contents}>

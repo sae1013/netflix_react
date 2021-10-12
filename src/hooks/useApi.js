@@ -17,6 +17,7 @@ const useApi = () => {
       
       if(response.status == 200){
         if(response.data.results){
+          
           applyData(response.data.results);
         }else {
           applyData(response.data);

@@ -1,6 +1,6 @@
 .nav {
   width:100%;
-  padding: 1rem;
+  padding: 2rem;
   position: fixed;
   transition: all .4s ease-in;
   z-index: 100;
@@ -14,6 +14,7 @@
   justify-content: space-between;
 }
 .nav_logo{
+  margin: 0rem 2rem;
   width:100px;
 }
 .nav_avatar{
@@ -29,31 +30,38 @@
 .search form {
   display: flex;
   align-items: center;
-
+  position: relative;
+  
   input {
     border: none;
     border: 1px solid grey;
-    letter-spacing: .2rem;
+    letter-spacing: .1rem;
     border-radius: 1.5rem;
     outline: none;
-    width:20rem;
+    width:25rem;
     padding: 1rem;
     background-color: transparent;
     color: white;
     transition: all 0.3s;
   }
   input:focus {
-    width:25rem;
+    transform: scaleX(1.2);
+  }
+  input:focus + button {
+    right:-1rem;
   }
   button {
+    position: absolute;
+    right: 1rem;
     outline: none;
     background: none;
     border: none;
+    transition: all .3s;
   }
   svg {
     color: white;
     font-size: 2rem;
-    transform: translateX(-150%);
+    // transform: translateX(-150%);
   }
   svg:hover {
     opacity: 0.6;
