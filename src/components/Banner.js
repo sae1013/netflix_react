@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useCallback} from 'react'
-import classes from './Banner.module.css';
+import classes from './Banner.module.scss';
 import Button from '../UI/Button';
 import useApi from '../hooks/useApi';
 import requests from '../request';

@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import Banner from "../components/Banner";
 import Row from "../components/Row";
 import requests from "../request";
-import classes from './HomeScreen.module.css';
+import classes from './HomeScreen.module.scss';
 
 function Homescreen(props) {
   

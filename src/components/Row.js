@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useCallback} from 'react'
-import classes from './Row.module.css';
+import classes from './Row.module.scss';
 import MovieItem from './MovieItem';
 import useApi from '../hooks/useApi';
 

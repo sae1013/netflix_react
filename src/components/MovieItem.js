@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {useHistory} from 'react-router-dom';
-import classes from './MovieItem.module.css';
+import classes from './MovieItem.module.scss';
 import { RatingView } from 'react-simple-star-rating'
 import poster_null_image from '../images/poster_null.svg';
 

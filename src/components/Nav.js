@@ -1,6 +1,6 @@
 import React,{useRef,useState,useEffect,useCallback} from 'react'
 import classes from './Nav.module.scss';
-import tmdbLogo from '../images/tmdb_logo.png';
+import {ReactComponent as TmdbLogo} from '../images/logo_tmdb.svg';
 import avatar from '../images/avatar.png';
 import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
@@ -16,6 +16,7 @@ function Nav() {
   const searchBarShow = !history.location.pathname.startsWith('/search');
   
   const transitionNavBar = useCallback(() => {
+    
     if(window.scrollY > 90) { 
       handleNavShow(true);  
     }else {
@@ -40,7 +41,7 @@ function Nav() {
     <div className={`${classes.nav} ${NavShow && classes.bg_black}`}>
       <div className={classes.nav_items}>
         <Link className={classes.nav_logo} to='/'>
-            <img src={tmdbLogo}></img>
+            <TmdbLogo width="15rem"></TmdbLogo>
         </Link>
         {searchBarShow &&
           <div className={classes.search}>
