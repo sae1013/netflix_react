@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useCallback} from 'react'
 import {useHistory} from 'react-router-dom';
 import classes from './MovieItem.module.scss';
 import { RatingView } from 'react-simple-star-rating'
@@ -9,6 +9,10 @@ let baseImageUrl = 'https://image.tmdb.org/t/p/w500'
 function MovieItem({movie,isLargeRow = false}) { 
   const [showBack,setShowBack] = useState(false);
   const history = useHistory();
+  
+  const onImageError = useCallback((e) => {
+    e.target.src = poster_null_image
+  },[])
   
   const mouseEnterHandler = (e) => {
     setShowBack(true);
@@ -31,8 +35,8 @@ function MovieItem({movie,isLargeRow = false}) {
             <RatingView ratingValue={movie.vote_average/2} stars={5}/>
           </div>
         </div>)}
-      {movie.poster_path ?<img src={`${baseImageUrl}${movie.poster_path}`}></img>
-      : <img style={{objectFit:'cover'}} src={poster_null_image}></img>}
+      {movie.poster_path ?<img src={`${baseImageUrl}${movie.poster_path}`} onError={onImageError}></img>
+      : <img style={{objectFit:'cover'}} src={poster_null_image} ></img>}
       
     </div>
   )

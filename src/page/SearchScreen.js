@@ -73,14 +73,14 @@ function SearchScreen() {
     </>
     )
   }
-  
+   
   return (
     <div className={classes.container}>
       <div className={classes.search_section}>
           <p className={classes.title}>검색어를 입력해주세요</p>
           <div className={classes.search}>
-            <form onSubmit = {searchSubmit}>
-              <input className = {!isValid && classes.input_error} onChange={searchInputChange} value={searchInput}></input>
+            <form onSubmit = {searchSubmit}> 
+              <input className = {!isValid ? classes.input_error:null} onChange={searchInputChange} value={searchInput}></input>
               <button><FontAwesomeIcon icon={faSearch} size='1x' /></button>
             </form>  
           </div>
